@@ -4,6 +4,9 @@ using BasilBooks.Components;
 using BasilBooks.ServiceInterface;
 using ServiceStack;
 using ServiceStack.Blazor;
+using Blazorise;
+using Blazorise.Bulma;
+using Blazorise.Icons.FontAwesome;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +17,12 @@ builder.Services.AddScoped(c => new HttpClient { BaseAddress = new Uri(baseUrl) 
 builder.Services.AddBlazorServerIdentityApiClient(baseUrl);
 builder.Services.AddLocalStorage();
 builder.Services.AddServiceStack(typeof(MyServices).Assembly);
+
+// Add Blazorise & Bulma.
+builder.Services
+    .AddBlazorise(options => { options.Immediate = true; })
+    .AddBulmaProviders()
+    .AddFontAwesomeIcons();
 
 // Add services to the container.
 builder.Services.AddRazorComponents()

@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Blazorise.Bulma" Version="1.5.2" />
+    <PackageReference Include="Blazorise.Icons.FontAwesome" Version="1.5.2" />
     <PackageReference Include="ServiceStack" Version="8.*" />
     <PackageReference Include="ServiceStack.Blazor" Version="8.*" />
     <PackageReference Include="ServiceStack.Extensions" Version="8.*" />
